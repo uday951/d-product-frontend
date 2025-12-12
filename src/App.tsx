@@ -9,6 +9,8 @@ import CheckoutPage from './pages/CheckoutPage';
 import CartPage from './pages/CartPage';
 import LoginPage from './pages/LoginPage';
 import AdminPage from './pages/AdminPage';
+import PaymentPage from './pages/PaymentPage';
+import DirectPurchasePage from './pages/DirectPurchasePage';
 import './index.css';
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
           <Route path="/p/:slug" element={<ProductPage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/payment" element={<PaymentPage />} />
+          <Route path="/buy/:slug" element={<DirectPurchasePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/admin" element={<AdminPage />} />
           </Routes>

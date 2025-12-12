@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Spline from '@splinetool/react-spline';
 import anime from 'animejs';
 import NeonButton from '../components/NeonButton';
 
@@ -23,13 +22,8 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section with Spline 3D */}
+      {/* Hero Section */}
       <section ref={heroRef} className="relative h-screen flex items-end pb-32 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Spline 
-            scene="https://prod.spline.design/jpY0bFuxs9k-fh1w/scene.splinecode"
-          />
-        </div>
         
         <div className="relative z-10 container mx-auto px-8 md:px-16 mb-16">
           <div className="max-w-xl">

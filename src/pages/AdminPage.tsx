@@ -23,7 +23,7 @@ const AdminPage: React.FC = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/products');
+      const response = await axios.get('https://degital-product.onrender.com/api/products');
       setProducts(response.data);
     } catch (error) {
       console.error('Error fetching products:', error);
@@ -38,7 +38,7 @@ const AdminPage: React.FC = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:5000/api/products', formData, {
+      await axios.post('https://degital-product.onrender.com/api/products', formData, {
         headers: { Authorization: `Bearer ${token}` }
       });
       alert('Product created successfully!');
@@ -62,7 +62,7 @@ const AdminPage: React.FC = () => {
     if (!window.confirm('Delete this product?')) return;
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/products/${id}`, {
+      await axios.delete(`https://degital-product.onrender.com/api/products/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       fetchProducts();

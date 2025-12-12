@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Spline from '@splinetool/react-spline';
 import { GoogleLogin } from '@react-oauth/google';
 import { authAPI } from '../utils/api';
 import { useStore } from '../store/useStore';
@@ -50,12 +49,8 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center pt-20 relative overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <Spline scene="https://prod.spline.design/5TN4oWXqWhd5lH0P/scene.splinecode" />
-      </div>
-      
-      <div className="glass-effect rounded-xl p-8 w-full max-w-md relative z-10 ml-32 md:ml-64">
+    <div className="min-h-screen flex items-center justify-center pt-20">
+      <div className="glass-effect rounded-xl p-8 w-full max-w-md">
         <h1 className="text-3xl font-bold neon-text text-center mb-8">
           {isLogin ? 'Login' : 'Sign Up'}
         </h1>

@@ -47,6 +47,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           src={product.image}
           alt={product.title}
           className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+          onError={(e) => {
+            e.currentTarget.src = 'https://via.placeholder.com/400x300/1a1a2e/FFD700?text=UdayTechX';
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>

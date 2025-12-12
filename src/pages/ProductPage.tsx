@@ -48,8 +48,9 @@ const ProductPage: React.FC = () => {
 
   const handleBuyNow = () => {
     if (!product) return;
+    // Add to cart and go directly to payment
     addToCart(product);
-    navigate('/checkout');
+    navigate('/payment', { state: { product } });
   };
 
   const handleAddToCart = () => {
@@ -133,22 +134,13 @@ const ProductPage: React.FC = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col gap-4">
               <NeonButton
                 onClick={handleBuyNow}
                 disabled={!product.inStock}
-                className="flex-1"
+                className="w-full text-lg py-4"
               >
-                Buy Now
-              </NeonButton>
-              
-              <NeonButton
-                variant="secondary"
-                onClick={handleAddToCart}
-                disabled={!product.inStock}
-                className="flex-1"
-              >
-                Add to Cart
+                Buy Now - ${product.price}
               </NeonButton>
             </div>
 
